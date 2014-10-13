@@ -1,0 +1,15 @@
+# Cordova tools.
+node_modules/
+
+# Crosswalk tools.
+crosswalk_cordova/
+
+# Application builds.
+bin/
+tmp/
+
+# Keys.
+keys/
+
+# Vim.
+*.sw*
