@@ -17,9 +17,13 @@ cp -r app/* tmp/ios/www/
 
 # Build the app.
 cd tmp/ios
-../../node_modules/.bin/cordova build --release --device
+../../node_modules/.bin/cordova build --platform android --release
+../../node_modules/.bin/cordova build --platform android --debug
+../../node_modules/.bin/cordova build --platform ios --release --device || true
 
 # Bring the app up.
 cd ../..
 mkdir -p bin
-cp -r "tmp/ios/platforms/ios/build/device/$APP_NAME.app" bin/
+cp "tmp/ios/platforms/android/ant-build/CordovaApp-debug.apk" \
+    "bin/$APP_NAME-debug.apk"
+cp -r "tmp/ios/platforms/ios/build/device/$APP_NAME.app" bin/ || true

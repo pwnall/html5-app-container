@@ -14,12 +14,19 @@ rm -rf tmp/android/assets/www/img
 rm -rf tmp/android/assets/www/js
 cp -r app/* tmp/android/assets/www/
 
-# Build the app.
+# Build the debug app.
+cd tmp/android
+./cordova/build --debug
+mkdir -p bin
+cd ../..
+cp "tmp/android/bin/$APP_NAME-debug.apk" bin/
+
+# Build the release app.
 cd tmp/android
 ./cordova/build --release
-
-# Sign the app.
 cd ../..
+
+# Sign the release app.
 jarsigner -sigalg SHA1withRSA -digestalg SHA1 \
     -keystore keys/android/release.keystore -storepass 'store-password' \
     -keypass 'key-password' \
@@ -29,6 +36,5 @@ jarsigner -sigalg SHA1withRSA -digestalg SHA1 \
 zipalign 4 "tmp/android/bin/$APP_NAME-release-unaligned.apk" \
     "tmp/android/bin/$APP_NAME-release.apk"
 
-# Bring the app up.
-mkdir -p bin
+# Copy the signed app to bin/.
 cp "tmp/android/bin/$APP_NAME-release.apk" bin/

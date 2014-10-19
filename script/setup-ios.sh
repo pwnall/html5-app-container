@@ -16,13 +16,12 @@ npm install ios-sim
 # Create generic Cordova application.
 mkdir -p tmp/ios
 rm -rf tmp/ios
-node_modules/.bin/cordova create tmp/ios "$APP_PACKAGE" "$APP_NAME" \
-    "{}" \
-    --link_to ./app
+node_modules/.bin/cordova create ./tmp/ios "$APP_PACKAGE" "$APP_NAME"
 cd tmp/ios
 
 # TODO(pwnall): consider adding Firefox OS / Windows / etc.
 ../../node_modules/.bin/cordova platform add ios
+../../node_modules/.bin/cordova platform add android
 
 # Plugins. Add everything to get decent permission bits.
 ../../node_modules/.bin/cordova plugin add org.apache.cordova.battery-status
