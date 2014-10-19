@@ -25,18 +25,22 @@ cd tmp/ios
 ../../node_modules/.bin/cordova platform add ios
 
 # Plugins. Add everything to get decent permission bits.
-../../node_modules/.bin/cordova plugin add org.apache.cordova.network-information
 ../../node_modules/.bin/cordova plugin add org.apache.cordova.battery-status
+../../node_modules/.bin/cordova plugin add org.apache.cordova.camera
+../../node_modules/.bin/cordova plugin add org.apache.cordova.console
 ../../node_modules/.bin/cordova plugin add org.apache.cordova.device
 ../../node_modules/.bin/cordova plugin add org.apache.cordova.device-motion
 ../../node_modules/.bin/cordova plugin add org.apache.cordova.device-orientation
+../../node_modules/.bin/cordova plugin add org.apache.cordova.dialogs
+../../node_modules/.bin/cordova plugin add org.apache.cordova.file
 ../../node_modules/.bin/cordova plugin add org.apache.cordova.geolocation
-../../node_modules/.bin/cordova plugin add org.apache.cordova.camera
-../../node_modules/.bin/cordova plugin add org.apache.cordova.media-capture
-../../node_modules/.bin/cordova plugin add org.apache.cordova.media
-../../node_modules/.bin/cordova plugin add org.apache.cordova.vibration
 ../../node_modules/.bin/cordova plugin add org.apache.cordova.globalization
+../../node_modules/.bin/cordova plugin add org.apache.cordova.media
+../../node_modules/.bin/cordova plugin add org.apache.cordova.media-capture
+../../node_modules/.bin/cordova plugin add org.apache.cordova.network-information
 ../../node_modules/.bin/cordova plugin add org.apache.cordova.speech.speechsynthesis
+../../node_modules/.bin/cordova plugin add org.apache.cordova.statusbar
+../../node_modules/.bin/cordova plugin add org.apache.cordova.vibration
 
 # Chrome Apps plugins.
 ../../node_modules/.bin/cordova plugin add org.chromium.power

@@ -29,9 +29,11 @@ cd tmp/android
 
 # Plugins. Add everything to get decent permission bits.
 ../../node_modules/.bin/plugman install --platform android --project ./ --plugin \
-    org.apache.cordova.network-information
-../../node_modules/.bin/plugman install --platform android --project ./ --plugin \
     org.apache.cordova.battery-status
+../../node_modules/.bin/plugman install --platform android --project ./ --plugin \
+    org.apache.cordova.camera
+../../node_modules/.bin/plugman install --platform android --project ./ --plugin \
+    org.apache.cordova.console
 ../../node_modules/.bin/plugman install --platform android --project ./ --plugin \
     org.apache.cordova.device
 ../../node_modules/.bin/plugman install --platform android --project ./ --plugin \
@@ -39,23 +41,27 @@ cd tmp/android
 ../../node_modules/.bin/plugman install --platform android --project ./ --plugin \
     org.apache.cordova.device-orientation
 ../../node_modules/.bin/plugman install --platform android --project ./ --plugin \
+    org.apache.cordova.dialogs
+../../node_modules/.bin/plugman install --platform android --project ./ --plugin \
+    org.apache.cordova.file
+../../node_modules/.bin/plugman install --platform android --project ./ --plugin \
     org.apache.cordova.geolocation
-../../node_modules/.bin/plugman install --platform android --project ./ --plugin \
-    org.apache.cordova.camera
-../../node_modules/.bin/plugman install --platform android --project ./ --plugin \
-    org.apache.cordova.media-capture
-../../node_modules/.bin/plugman install --platform android --project ./ --plugin \
-    org.apache.cordova.media
-../../node_modules/.bin/plugman install --platform android --project ./ --plugin \
-    org.apache.cordova.vibration
 ../../node_modules/.bin/plugman install --platform android --project ./ --plugin \
     org.apache.cordova.globalization
 ../../node_modules/.bin/plugman install --platform android --project ./ --plugin \
+    org.apache.cordova.media
+../../node_modules/.bin/plugman install --platform android --project ./ --plugin \
+    org.apache.cordova.media-capture
+../../node_modules/.bin/plugman install --platform android --project ./ --plugin \
+    org.apache.cordova.network-information
+../../node_modules/.bin/plugman install --platform android --project ./ --plugin \
     org.apache.cordova.speech.speechsynthesis
+../../node_modules/.bin/plugman install --platform android --project ./ --plugin \
+    org.apache.cordova.statusbar
+../../node_modules/.bin/plugman install --platform android --project ./ --plugin \
+    org.apache.cordova.vibration
 
 # Chrome Apps plugins.
-../../node_modules/.bin/plugman install --platform android --project ./ --plugin \
-    org.chromium.power
 ../../node_modules/.bin/plugman install --platform android --project ./ --plugin \
     org.chromium.alarms
 ../../node_modules/.bin/plugman install --platform android --project ./ --plugin \
@@ -72,6 +78,8 @@ cd tmp/android
     org.chromium.polyfill.customevent
 ../../node_modules/.bin/plugman install --platform android --project ./ --plugin \
     org.chromium.polyfill.xhr_features
+../../node_modules/.bin/plugman install --platform android --project ./ --plugin \
+    org.chromium.power
 ../../node_modules/.bin/plugman install --platform android --project ./ --plugin \
     org.chromium.storage
 ../../node_modules/.bin/plugman install --platform android --project ./ --plugin \

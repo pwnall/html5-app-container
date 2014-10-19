@@ -13,3 +13,6 @@ keys/
 
 # Vim.
 *.sw*
+
+# OSX.
+.DS_Store
