@@ -1,10 +1,13 @@
 (function() {
   var onDeviceReady = function() {
-    document.getElementById('iframe').src = 'https://rumbly.herokuapp.com';
+    var iframe = document.getElementById('iframe');
+    window.iframe = iframe;
+    iframe.src = 'https://rumbly.herokuapp.com';
   };
   var onMessage = function(event) {
-    if (event.data === 'hook-me-up-cordova') {
-      var iframe = document.getElementById('iframe');
+    var iframe = document.getElementById('iframe');
+
+    if (event.data === 'html5-app-container-wire-me') {
       var platform = {};
       iframe.contentWindow.cordovaPlatform = platform;
       var properties = Object.getOwnPropertyNames(window);
@@ -13,7 +16,19 @@
         var name = properties[index];
         platform[name] = window[name];
       }
-      iframe.contentWindow.postMessage('cordova-hooked-you-up', '*');
+      iframe.contentWindow.postMessage('html5-app-container-wired-you', '*');
+    }
+
+    if (event.data.substring(0, 25) === 'html5-app-container-eval|') {
+      var javaScript = event.data.substring(25);
+      var result = null;
+      try {
+        result = window.eval(javaScript);
+      } catch(e) {
+        result = e;
+      }
+      iframe.contentWindow.postMessage(
+          'html5-app-container-evaled|' + result, '*');
     }
   };
   document.addEventListener('deviceready', onDeviceReady, false);
