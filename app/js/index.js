@@ -1,11 +1,16 @@
 (function() {
+  var origin = 'https://rumbly.herokuapp.com';
+  var rootPath = '/m';
+
   var onDeviceReady = function() {
     var iframe = document.getElementById('iframe');
     window.iframe = iframe;
-    iframe.src = 'https://rumbly.herokuapp.com';
+    iframe.src = origin + rootPath;
   };
   var onMessage = function(event) {
     var iframe = document.getElementById('iframe');
+    if (event.origin !== origin)
+      return;
 
     if (event.data === 'html5-app-container-wire-me') {
       var platform = {};
@@ -16,7 +21,8 @@
         var name = properties[index];
         platform[name] = window[name];
       }
-      iframe.contentWindow.postMessage('html5-app-container-wired-you', '*');
+      iframe.contentWindow.postMessage('html5-app-container-wired-you',
+          origin);
     }
 
     if (event.data.substring(0, 25) === 'html5-app-container-eval|') {
@@ -27,8 +33,8 @@
       } catch(e) {
         result = e;
       }
-      iframe.contentWindow.postMessage(
-          'html5-app-container-evaled|' + result, '*');
+      iframe.contentWindow.postMessage('html5-app-container-evaled|' + result,
+          origin);
     }
   };
   document.addEventListener('deviceready', onDeviceReady, false);
