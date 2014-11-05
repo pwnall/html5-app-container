@@ -10,11 +10,12 @@ set -o nounset  # Catch un-initialized variables.
 npm install plugman
 
 # Get Crosswalk-Cordova.
+XWALK_VER=9.38.208.9
 if [ ! -f crosswalk_cordova/bin/create ] ; then
   mkdir -p crosswalk_cordova
   cd crosswalk_cordova
   curl --output sdk.zip \
-      https://download.01.org/crosswalk/releases/crosswalk/android/beta/9.38.208.8/arm/crosswalk-cordova-9.38.208.8-arm.zip
+      "https://download.01.org/crosswalk/releases/crosswalk/android/beta/$XWALK_VER/arm/crosswalk-cordova-$XWALK_VER-arm.zip"
   unzip sdk.zip
   rm sdk.zip
   mv crosswalk-cordova-*/* .
