@@ -10,10 +10,11 @@ set -o nounset  # Catch un-initialized variables.
 mkdir -p bin/js_bundles
 
 # Copy the JS into the bundle.
-cat tmp/ios/platforms/ios/platform_www/cordova.js \
-    tmp/ios/plugins/org.chromium.*/*.js \
-    tmp/ios/plugins/org.chromium.*/*/*.js \
-    tmp/ios/plugins/org.chromium.*/*/*/*.js \
-    tmp/ios/plugins/org.apache.cordova.*/www/*.js \
-    tmp/ios/plugins/org.apache.cordova.*/www/ios/*.js \
+cat tmp/ios/platforms/ios/www/cordova.js \
+    tmp/ios/platforms/ios/www/cordova_plugins.js \
+    tmp/ios/platforms/ios/www/plugins/org.chromium.*/*.js \
+    tmp/ios/platforms/ios/www/plugins/org.chromium.*/*/*.js \
+    tmp/ios/platforms/ios/www/plugins/org.chromium.*/*/*/*.js \
+    tmp/ios/platforms/ios/www/plugins/org.apache.cordova.*/www/*.js \
+    tmp/ios/platforms/ios/www/plugins/org.apache.cordova.*/www/ios/*.js \
     > bin/js_bundles/ios.js

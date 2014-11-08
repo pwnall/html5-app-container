@@ -13,7 +13,6 @@ npm install plugman
 npm install browserify
 
 # Get Crosswalk-Cordova.
-# XWALK_VER=9.38.208.9
 XWALK_VER=10.39.235.4
 if [ ! -f crosswalk_cordova/bin/create ] ; then
   mkdir -p crosswalk_cordova
@@ -33,9 +32,9 @@ crosswalk_cordova/bin/create tmp/android "$APP_PACKAGE" "$APP_NAME"
 cp app/config.xml tmp/android/res/xml/
 cd tmp/android
 
-# Bugfix.
+# Patch in https://github.com/crosswalk-project/crosswalk-cordova-android/pull/147
 sed -i '' \
-    's/this.appView.bridge.getMessageQueue().reset();/this.appView.bridge.reset(url);' \
+    's/this.appView.bridge.getMessageQueue().reset();/this.appView.bridge.reset(url);/' \
     CordovaLib/src/org/apache/cordova/CordovaChromeClient.java
 
 # Plugins. Add everything to get decent permission bits.
