@@ -23,7 +23,7 @@ advantages:
 ## Personalize
 
 Check out the repository, set your application name and package name in
-`script/vars.sh`.
+`script/vars.sh` and `app/config.xml`.
 
 The `script/setup-*.sh` files (executed in the Setup step described below)
 install Cordova plugins that extend the native capabilities of the container.
@@ -62,6 +62,27 @@ The following commands place build products in the `bin/` directory.
 The `app/` directory has HTML / CSS / JS and image files that are copied into
 the application container. When changing those, only the build step needs to
 be re-executed.
+
+
+## Develop
+
+The following commands have proven useful in debugging the application
+container.
+
+```bash
+./node_modules/.bin/ios-sim launch bin/*-debug.ap
+```
+
+The iOS application container can be debugged easily by
+[Safari's Remote Inspector](http://webdesign.tutsplus.com/articles/quick-tip-using-web-inspector-to-debug-mobile-safari--webdesign-8787).
+
+
+```bash
+adb install -r bin/*-debug.apk
+```
+
+The Android application container can be debugged easily by
+[Chrome's Remote Debugger](https://developer.chrome.com/devtools/docs/remote-debugging).
 
 
 ## License

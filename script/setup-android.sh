@@ -9,9 +9,6 @@ set -o nounset  # Catch un-initialized variables.
 # Get plugman for Cordova.
 npm install plugman
 
-# Get browserify for JS bundle.
-npm install browserify
-
 # Get Crosswalk-Cordova.
 XWALK_VER=10.39.235.4
 if [ ! -f crosswalk_cordova/bin/create ] ; then
