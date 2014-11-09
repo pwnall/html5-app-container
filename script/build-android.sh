@@ -14,6 +14,20 @@ rm -rf tmp/android/assets/www/img
 rm -rf tmp/android/assets/www/js
 cp -r app/* tmp/android/assets/www/
 
+# Bundle Cordova's platform files.
+cat tmp/android/assets/www/cordova.js \
+    tmp/android/assets/www/cordova_plugins.js \
+    tmp/android/assets/www/plugins/org.chromium.*/*.js \
+    tmp/android/assets/www/plugins/org.chromium.*/*/*.js \
+    tmp/android/assets/www/plugins/org.chromium.*/*/*/*.js \
+    tmp/android/assets/www/plugins/org.apache.cordova.*/www/*.js \
+    tmp/android/assets/www/plugins/org.apache.cordova.*/www/android/*.js \
+    > tmp/android/assets/www/cordova_all.xl.js
+node_modules/.bin/uglifyjs --screw-ie8 -c -m \
+    -o tmp/android/assets/www/cordova_all.min.js \
+    tmp/android/assets/www/cordova_all.xl.js
+rm tmp/android/assets/www/cordova_all.xl.js
+
 # Build the debug app.
 cd tmp/android
 ./cordova/build --debug
@@ -33,6 +47,7 @@ jarsigner -sigalg SHA1withRSA -digestalg SHA1 \
     -signedjar "tmp/android/bin/$APP_NAME-release-unaligned.apk" \
     "tmp/android/bin/$APP_NAME-release-unsigned.apk" \
     android_release
+rm -f "tmp/android/bin/$APP_NAME-release.apk"
 zipalign 4 "tmp/android/bin/$APP_NAME-release-unaligned.apk" \
     "tmp/android/bin/$APP_NAME-release.apk"
 

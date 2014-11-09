@@ -9,6 +9,9 @@ set -o nounset  # Catch un-initialized variables.
 # Get Cordova.
 npm install cordova
 
+# Get minifier for Cordova's platform JavaScript.
+npm install uglify-js
+
 # Get deploy tools.
 npm install ios-deploy
 npm install ios-sim
