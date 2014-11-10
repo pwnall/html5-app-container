@@ -13,16 +13,21 @@ npm install plugman
 npm install uglify-js
 
 # Get Crosswalk-Cordova.
-XWALK_VER=10.39.235.4
-if [ ! -f crosswalk_cordova/bin/create ] ; then
-  mkdir -p crosswalk_cordova
-  cd crosswalk_cordova
+if [ ! -f crosswalk_cordova_cache/$XWALK_BRANCH/$XWALK_VER/bin/create ] ; then
+  mkdir -p crosswalk_cordova_cache/$XWALK_BRANCH/$XWALK_VER
+  cd crosswalk_cordova_cache/$XWALK_BRANCH/$XWALK_VER
   curl --output sdk.zip \
-      "https://download.01.org/crosswalk/releases/crosswalk/android/beta/$XWALK_VER/arm/crosswalk-cordova-$XWALK_VER-arm.zip"
+      "https://download.01.org/crosswalk/releases/crosswalk/android/$XWALK_BRANCH/$XWALK_VER/arm/crosswalk-cordova-$XWALK_VER-arm.zip"
   unzip sdk.zip
   rm sdk.zip
   mv crosswalk-cordova-*/* .
-  cd ..
+  cd ../../..
+fi
+if [ ! -f crosswalk_cordova/.version_tag-$XWALK_BRANCH-$XWALK_VER ]; then
+  rm -rf crosswalk_cordova
+  mkdir -p crosswalk_cordova
+  cp -r crosswalk_cordova_cache/$XWALK_BRANCH/$XWALK_VER/* crosswalk_cordova/
+  touch crosswalk_cordova/.version_tag-$XWALK_BRANCH-$XWALK_VER
 fi
 
 # Create Crosswalk-Cordova application.
