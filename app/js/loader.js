@@ -41,7 +41,6 @@
         return iframe.contentWindow.document;
     } catch(securityError) {
     }
-
     try {
       if (iframe.document)
         return iframe.document;
@@ -55,12 +54,10 @@
     var iframeDoc = getIframeDocument(iframe);
     if (iframeDoc === null)
       return '0000';  // Opportunity to work around issues like XWALK-2905.
-
-    var element = iframeDoc.getElementById('cordova-js-token');
-    if (!element)
+    var tokenDiv = iframeDoc.getElementById('cordova-js-token');
+    if (!tokenDiv)
       return 'missing';  // Debugging assistance.
-
-    return element.getAttribute('data-token');
+    return tokenDiv.getAttribute('data-token');
   };
 
   // Implements the communication protocol with the Web-side Cordova loader.
