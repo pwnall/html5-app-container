@@ -40,11 +40,11 @@ cat tmp/ios/platforms/android/assets/www/cordova.js \
     tmp/ios/platforms/android/assets/www/plugins/org.chromium.*/*/*/*.js \
     tmp/ios/platforms/android/assets/www/plugins/org.apache.cordova.*/www/*.js \
     tmp/ios/platforms/android/assets/www/plugins/org.apache.cordova.*/www/android/*.js \
-    > tmp/ios/platforms/android/assets/www/cordova_all.xl.js
+    > tmp/ios/platforms/android/platform_www/cordova_all.xl.js
 node_modules/.bin/uglifyjs --screw-ie8 -c -m \
-    -o tmp/ios/platforms/android/assets/www/cordova_all.min.js \
-    tmp/ios/platforms/android/assets/www/cordova_all.xl.js
-rm tmp/ios/platforms/android/assets/www/cordova_all.xl.js
+    -o tmp/ios/platforms/android/platform_www/cordova_all.min.js \
+    tmp/ios/platforms/android/platform_www/cordova_all.xl.js
+rm tmp/ios/platforms/android/platform_www/cordova_all.xl.js
 
 # Build the app.
 cd tmp/ios
