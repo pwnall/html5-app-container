@@ -29,6 +29,40 @@
     return iframe;
   };
 
+  // Returns the HTMLDocument inside an <iframe>, or null.
+  var getIframeDocument = function(iframe) {
+    try {
+      if (iframe.contentDocument)
+        return iframe.contentDocument;
+    } catch(securityError) {
+    }
+    try {
+      if (iframe.contentWindow && iframe.contentWindow.document)
+        return iframe.contentWindow.document;
+    } catch(securityError) {
+    }
+
+    try {
+      if (iframe.document)
+        return iframe.document;
+    } catch (securityError) {
+    }
+    return null;
+  };
+
+  // Gets the XSS protection token in the <iframe>.
+  var getIframeToken = function(iframe) {
+    var iframeDoc = getIframeDocument(iframe);
+    if (iframeDoc === null)
+      return '0000';  // Opportunity to work around issues like XWALK-2905.
+
+    var element = iframeDoc.getElementById('cordova-js-token');
+    if (!element)
+      return 'missing';  // Debugging assistance.
+
+    return element.getAttribute('data-token');
+  };
+
   // Implements the communication protocol with the Web-side Cordova loader.
   var webLoaderProtocol = function(cordovaJs) {
     getPageUrl('web_url.txt', function(webUrlTxt) {
@@ -41,13 +75,15 @@
           return;
         var data = event.data;
         if (data === 'getjs') {
+          var token = getIframeToken(iframe);
           iframe.contentWindow.postMessage(
-              'cordovaJs|' + cordovaJs, webLoaderOrigin);
+              'cordovaJs|' + token + '|' + cordovaJs, webLoaderOrigin);
           return;
         }
         if (data.substring(0, 5) === 'jump|') {
           window.removeEventListener('message', onMessage);
           window.location = data.substring(5);
+          return;
         }
       };
       window.addEventListener('message', onMessage, false);
