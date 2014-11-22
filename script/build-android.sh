@@ -28,6 +28,11 @@ node_modules/.bin/uglifyjs --screw-ie8 -c -m \
     tmp/android/assets/www/cordova_all.xl.js
 rm tmp/android/assets/www/cordova_all.xl.js
 
+# Workaround Android Ant configuration bug.
+# https://code.google.com/p/android/issues/detail?id=67510
+echo "java.source=1.7" > tmp/android/ant.properties
+echo "java.target=1.7" >> tmp/android/ant.properties
+
 # Build the debug app.
 cd tmp/android
 ./cordova/build --debug
