@@ -2,7 +2,7 @@
 
 # Application identity. You probably want to change this.
 export APP_NAME="AppContainer"
-export APP_PACKAGE="us.costan.app_container"
+export APP_PACKAGE="us.costan.appcontainer"
 
 # Crosswalk version.
 export XWALK_BRANCH=beta
