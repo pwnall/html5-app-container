@@ -80,7 +80,8 @@ The following commands have proven useful in debugging the application
 container.
 
 ```bash
-./node_modules/.bin/ios-sim launch bin/*-debug.ap
+./node_modules/.bin/ios-sim launch bin/*-debug.app
+./node_modules/.bin/ios-deploy -b bin/*-release.app
 ```
 
 The iOS application container can be debugged easily by
