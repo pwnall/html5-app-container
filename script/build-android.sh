@@ -14,6 +14,19 @@ rm -rf tmp/android/assets/www/img
 rm -rf tmp/android/assets/www/js
 cp -r app/* tmp/android/assets/www/
 
+# Generate logo variations.
+# Names lifted from https://issues.apache.org/jira/browse/CB-2606
+convert app/img/$APP_LOGO -resize 36x36 -gravity center -background none \
+    -extent 36x36 tmp/android/res/drawable-ldpi/icon.png
+convert app/img/$APP_LOGO -resize 48x48 -gravity center -background none \
+    -extent 48x48 tmp/android/res/drawable-mdpi/icon.png
+convert app/img/$APP_LOGO -resize 72x72 -gravity center -background none \
+    -extent 72x72 tmp/android/res/drawable-hdpi/icon.png
+convert app/img/$APP_LOGO -resize 96x96 -gravity center -background none \
+    -extent 96x96 tmp/android/res/drawable-xhdpi/icon.png
+convert app/img/$APP_LOGO -resize 96x96 -gravity center -background none \
+    -extent 96x96 tmp/android/res/drawable/icon.png
+
 # Bundle Cordova's platform files.
 cat tmp/android/assets/www/cordova.js \
     tmp/android/assets/www/cordova_plugins.js \

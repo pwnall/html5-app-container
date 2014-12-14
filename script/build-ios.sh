@@ -16,6 +16,49 @@ rm -rf tmp/ios/www/js
 cp -r app/* tmp/ios/www/
 cp app/config.xml tmp/ios/
 
+# Generate logo variations.
+# Names lifted from https://issues.apache.org/jira/browse/CB-2606
+mkdir -p tmp/ios/res/android
+mkdir -p tmp/ios/res/ios
+convert app/img/$APP_LOGO -resize 36x36 -gravity center -background none \
+    -extent 36x36 tmp/ios/res/android/ldpi.png
+convert app/img/$APP_LOGO -resize 48x48 -gravity center -background none \
+    -extent 48x48 tmp/ios/res/android/mdpi.png
+convert app/img/$APP_LOGO -resize 72x72 -gravity center -background none \
+    -extent 72x72 tmp/ios/res/android/hdpi.png
+convert app/img/$APP_LOGO -resize 96x96 -gravity center -background none \
+    -extent 96x96 tmp/ios/res/android/xhdpi.png
+convert app/img/$APP_LOGO -resize 29x29 -gravity center -extent 29x29 \
+    tmp/ios/res/ios/icon-small.png
+convert app/img/$APP_LOGO -resize 40x40 -gravity center -extent 40x40 \
+    tmp/ios/res/ios/icon-40.png
+convert app/img/$APP_LOGO -resize 50x50 -gravity center -extent 50x50 \
+    tmp/ios/res/ios/icon-50.png
+convert app/img/$APP_LOGO -resize 57x57 -gravity center -extent 57x57 \
+    tmp/ios/res/ios/icon.png
+convert app/img/$APP_LOGO -resize 58x58 -gravity center -extent 58x58 \
+    tmp/ios/res/ios/icon-small@2x.png
+convert app/img/$APP_LOGO -resize 60x60 -gravity center -extent 60x60 \
+    tmp/ios/res/ios/icon-60.png
+convert app/img/$APP_LOGO -resize 72x72 -gravity center -extent 72x72 \
+    tmp/ios/res/ios/icon-72.png
+convert app/img/$APP_LOGO -resize 76x76 -gravity center -extent 76x76 \
+    tmp/ios/res/ios/icon-76.png
+convert app/img/$APP_LOGO -resize 80x80 -gravity center -extent 80x80 \
+    tmp/ios/res/ios/icon-40@2x.png
+convert app/img/$APP_LOGO -resize 100x100 -gravity center -extent 100x100 \
+    tmp/ios/res/ios/icon-50@2x.png
+convert app/img/$APP_LOGO -resize 114x114 -gravity center -extent 114x114 \
+    tmp/ios/res/ios/icon@2x.png
+convert app/img/$APP_LOGO -resize 120x120 -gravity center -extent 120x120 \
+    tmp/ios/res/ios/icon-60@2x.png
+convert app/img/$APP_LOGO -resize 144x144 -gravity center -extent 144x144 \
+    tmp/ios/res/ios/icon-72@2x.png
+convert app/img/$APP_LOGO -resize 152x152 -gravity center -extent 152x152 \
+    tmp/ios/res/ios/icon-76@2x.png
+convert app/img/$APP_LOGO -resize 180x180 -gravity center -extent 180x180 \
+    tmp/ios/res/ios/icon-60@3x.png
+
 # Bundle Cordova's platform files -- iOS.
 # NOTE: the iOS build clears its www folder, but it copies the contents of
 #       platform_www in it, so we can stash our code there

@@ -18,6 +18,16 @@ advantages:
 * [node.js](http://nodejs.org/) (used by Cordova)
 * [Android SDK](https://developer.android.com/sdk/index.html)
 * [iOS SDK](https://developer.apple.com/xcode/downloads/)
+* [ImageMagick](http://www.imagemagick.org/) with
+  [librsvg](https://wiki.gnome.org/action/show/Projects/LibRsvg)
+
+If you have [Homebrew](http://brew.sh/), the following command installs
+Imagemagick correctly.
+
+```bash
+brew install librsvg
+brew install imagemagick --with-librsvg
+```
 
 
 ## Personalize
