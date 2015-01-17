@@ -2,7 +2,7 @@
   // XHR GETs the absolute URL, calls callback with a String or null.
   var getUrl = function(url, callback) {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', url, false);
+    xhr.open('GET', url, true);
     xhr.onreadystatechange = function() {
       if (xhr.readyState !== 4)
         return;
