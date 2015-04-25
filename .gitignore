@@ -1,13 +1,9 @@
-# Cordova tools.
+# Cordova tools and plugins.
 node_modules/
-
-# Crosswalk tools.
-crosswalk_cordova/
-crosswalk_cordova_cache/
 
 # Application builds.
 bin/
-tmp/
+cordova/
 
 # Keys.
 keys/
