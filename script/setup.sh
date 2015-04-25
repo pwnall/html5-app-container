@@ -41,7 +41,7 @@ cd cordova
 ../node_modules/.bin/cordova plugin add cordova-plugin-media
 ../node_modules/.bin/cordova plugin add cordova-plugin-media-capture
 ../node_modules/.bin/cordova plugin add cordova-plugin-network-information
-../node_modules/.bin/cordova plugin add cordova-plugin-speech.speechsynthesis
+#../node_modules/.bin/cordova plugin add cordova-plugin-speech-speechsynthesis
 ../node_modules/.bin/cordova plugin add cordova-plugin-statusbar
 ../node_modules/.bin/cordova plugin add cordova-plugin-vibration
 
