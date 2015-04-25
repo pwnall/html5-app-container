@@ -35,6 +35,7 @@ cat cordova/platforms/android/assets/www/cordova.js \
     cordova/platforms/android/assets/www/plugins/org.chromium.*/*.js \
     cordova/platforms/android/assets/www/plugins/org.chromium.*/*/*.js \
     cordova/platforms/android/assets/www/plugins/org.chromium.*/*/*/*.js \
+    cordova/platforms/android/assets/www/plugins/cordova-*/*.js \
     cordova/platforms/android/assets/www/plugins/cordova-*/www/*.js \
     cordova/platforms/android/assets/www/plugins/cordova-*/www/android/*.js \
     > cordova/platforms/android/platform_www/cordova_all.xl.js

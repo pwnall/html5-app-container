@@ -44,6 +44,7 @@ cd cordova
 #../node_modules/.bin/cordova plugin add cordova-plugin-speech-speechsynthesis
 ../node_modules/.bin/cordova plugin add cordova-plugin-statusbar
 ../node_modules/.bin/cordova plugin add cordova-plugin-vibration
+../node_modules/.bin/cordova plugin add cordova-plugin-whitelist
 
 # Chrome Apps plugins.
 ../node_modules/.bin/cordova plugin add org.chromium.alarms
