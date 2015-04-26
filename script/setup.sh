@@ -70,3 +70,6 @@ cd cordova
 
 # Crosswalk plugin.
 ../node_modules/.bin/cordova plugin add cordova-plugin-crosswalk-webview
+
+# NFC plugin.
+../node_modules/.bin/cordova plugin add com.chariotsolutions.nfc.plugin

@@ -38,6 +38,7 @@ cat cordova/platforms/android/assets/www/cordova.js \
     cordova/platforms/android/assets/www/plugins/cordova-*/*.js \
     cordova/platforms/android/assets/www/plugins/cordova-*/www/*.js \
     cordova/platforms/android/assets/www/plugins/cordova-*/www/android/*.js \
+    cordova/platforms/android/assets/www/plugins/com.*/www/*.js \
     > cordova/platforms/android/platform_www/cordova_all.xl.js
 node_modules/.bin/uglifyjs --screw-ie8 -c -m \
     -o cordova/platforms/android/platform_www/cordova_all.min.js \
