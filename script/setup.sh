@@ -47,7 +47,7 @@ cd cordova
 ../node_modules/.bin/cordova plugin add cordova-plugin-whitelist
 
 # Chrome Apps plugins.
-../node_modules/.bin/cordova plugin add cordova-plugin-chrome-apps-alarm
+../node_modules/.bin/cordova plugin add cordova-plugin-chrome-apps-alarms
 ../node_modules/.bin/cordova plugin add cordova-plugin-chrome-apps-audiocapture
 # TODO(pwnall): re-add bluetooth when it doesn't break the Android build
 # ../node_modules/.bin/cordova plugin add cordova-plugin-chrome-apps-bluetooth
