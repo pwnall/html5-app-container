@@ -30,16 +30,10 @@ convert app/img/$APP_LOGO -resize 96x96 -gravity center -background none \
 
 
 # Bundle Cordova's platform files.
-cat cordova/platforms/android/assets/www/cordova.js \
+node_modules/.bin/coffee script/merge-plugins.coffee \
+    cordova/platforms/android/assets/www/cordova.js \
     cordova/platforms/android/assets/www/cordova_plugins.js \
-    cordova/platforms/android/assets/www/plugins/org.chromium.*/*.js \
-    cordova/platforms/android/assets/www/plugins/org.chromium.*/*/*.js \
-    cordova/platforms/android/assets/www/plugins/org.chromium.*/*/*/*.js \
-    cordova/platforms/android/assets/www/plugins/cordova-*/*.js \
-    cordova/platforms/android/assets/www/plugins/cordova-*/www/*.js \
-    cordova/platforms/android/assets/www/plugins/cordova-*/www/android/*.js \
-    cordova/platforms/android/assets/www/plugins/com.*/www/*.js \
-    > cordova/platforms/android/platform_www/cordova_all.xl.js
+    cordova/platforms/android/platform_www/cordova_all.xl.js
 node_modules/.bin/uglifyjs --screw-ie8 -c -m \
     -o cordova/platforms/android/platform_www/cordova_all.min.js \
     cordova/platforms/android/platform_www/cordova_all.xl.js

@@ -10,8 +10,12 @@ set +o histexpand  # No history expansion, because of arcane ! treatment.
 # Get Cordova.
 npm install cordova
 
+# Get CoffeeScript for our Cordova plugin munging script.
+npm install coffee-script
+
 # Get minifier for Cordova's platform JavaScript.
 npm install uglify-js
+
 
 # Get deploy tools.
 npm install ios-deploy
