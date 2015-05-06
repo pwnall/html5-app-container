@@ -41,33 +41,33 @@ cd cordova
 ../node_modules/.bin/cordova plugin add cordova-plugin-media
 ../node_modules/.bin/cordova plugin add cordova-plugin-media-capture
 ../node_modules/.bin/cordova plugin add cordova-plugin-network-information
-#../node_modules/.bin/cordova plugin add cordova-plugin-speech-speechsynthesis
+# ../node_modules/.bin/cordova plugin add cordova-plugin-speech-speechsynthesis
 ../node_modules/.bin/cordova plugin add cordova-plugin-statusbar
 ../node_modules/.bin/cordova plugin add cordova-plugin-vibration
 ../node_modules/.bin/cordova plugin add cordova-plugin-whitelist
 
 # Chrome Apps plugins.
-../node_modules/.bin/cordova plugin add org.chromium.alarms
-../node_modules/.bin/cordova plugin add org.chromium.audiocapture
+../node_modules/.bin/cordova plugin add cordova-plugin-chrome-apps-alarm
+../node_modules/.bin/cordova plugin add cordova-plugin-chrome-apps-audiocapture
 # TODO(pwnall): re-add bluetooth when it doesn't break the Android build
-#../node_modules/.bin/cordova plugin add org.chromium.bluetooth
-#../node_modules/.bin/cordova plugin add org.chromium.bluetoothlowenergy
-#../node_modules/.bin/cordova plugin add org.chromium.bluetoothsocket
-../node_modules/.bin/cordova plugin add org.chromium.filesystem
-../node_modules/.bin/cordova plugin add org.chromium.idle
-../node_modules/.bin/cordova plugin add org.chromium.notifications
-../node_modules/.bin/cordova plugin add org.chromium.polyfill.blob_constructor
-../node_modules/.bin/cordova plugin add org.chromium.polyfill.customevent
-../node_modules/.bin/cordova plugin add org.chromium.polyfill.xhr_features
-../node_modules/.bin/cordova plugin add org.chromium.power
-../node_modules/.bin/cordova plugin add org.chromium.storage
-../node_modules/.bin/cordova plugin add org.chromium.system.cpu
-../node_modules/.bin/cordova plugin add org.chromium.system.display
-../node_modules/.bin/cordova plugin add org.chromium.system.memory
-../node_modules/.bin/cordova plugin add org.chromium.system.network
-../node_modules/.bin/cordova plugin add org.chromium.system.storage
-../node_modules/.bin/cordova plugin add org.chromium.videocapture
-../node_modules/.bin/cordova plugin add org.chromium.zip
+# ../node_modules/.bin/cordova plugin add cordova-plugin-chrome-apps-bluetooth
+# ../node_modules/.bin/cordova plugin add cordova-plugin-chrome-apps-bluetoothlowenergy
+# ../node_modules/.bin/cordova plugin add cordova-plugin-chrome-apps-bluetoothsocket
+../node_modules/.bin/cordova plugin add cordova-plugin-chrome-apps-filesystem
+../node_modules/.bin/cordova plugin add cordova-plugin-chrome-apps-idle
+../node_modules/.bin/cordova plugin add cordova-plugin-chrome-apps-notifications
+../node_modules/.bin/cordova plugin add cordova-plugin-chrome-apps-power
+../node_modules/.bin/cordova plugin add cordova-plugin-chrome-apps-storage
+../node_modules/.bin/cordova plugin add cordova-plugin-chrome-apps-system-cpu
+../node_modules/.bin/cordova plugin add cordova-plugin-chrome-apps-system-display
+../node_modules/.bin/cordova plugin add cordova-plugin-chrome-apps-system-memory
+../node_modules/.bin/cordova plugin add cordova-plugin-chrome-apps-system-network
+../node_modules/.bin/cordova plugin add cordova-plugin-chrome-apps-system-storage
+../node_modules/.bin/cordova plugin add cordova-plugin-chrome-apps-videocapture
+../node_modules/.bin/cordova plugin add cordova-plugin-chrome-apps-zip
+../node_modules/.bin/cordova plugin add cordova-plugin-blob-constructor-polyfill
+../node_modules/.bin/cordova plugin add cordova-plugin-customevent-polyfill
+../node_modules/.bin/cordova plugin add cordova-plugin-xhr-blob-polyfill
 
 # Crosswalk plugin.
 ../node_modules/.bin/cordova plugin add cordova-plugin-crosswalk-webview
