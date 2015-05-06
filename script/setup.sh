@@ -49,9 +49,10 @@ cd cordova
 # Chrome Apps plugins.
 ../node_modules/.bin/cordova plugin add org.chromium.alarms
 ../node_modules/.bin/cordova plugin add org.chromium.audiocapture
-../node_modules/.bin/cordova plugin add org.chromium.bluetooth
-../node_modules/.bin/cordova plugin add org.chromium.bluetoothlowenergy
-../node_modules/.bin/cordova plugin add org.chromium.bluetoothsocket
+# TODO(pwnall): re-add bluetooth when it doesn't break the Android build
+#../node_modules/.bin/cordova plugin add org.chromium.bluetooth
+#../node_modules/.bin/cordova plugin add org.chromium.bluetoothlowenergy
+#../node_modules/.bin/cordova plugin add org.chromium.bluetoothsocket
 ../node_modules/.bin/cordova plugin add org.chromium.filesystem
 ../node_modules/.bin/cordova plugin add org.chromium.idle
 ../node_modules/.bin/cordova plugin add org.chromium.notifications
