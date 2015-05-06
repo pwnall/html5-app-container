@@ -64,7 +64,7 @@ cd cordova
 ../node_modules/.bin/cordova plugin add cordova-plugin-chrome-apps-system-network
 ../node_modules/.bin/cordova plugin add cordova-plugin-chrome-apps-system-storage
 ../node_modules/.bin/cordova plugin add cordova-plugin-chrome-apps-videocapture
-../node_modules/.bin/cordova plugin add cordova-plugin-chrome-apps-zip
+../node_modules/.bin/cordova plugin add cordova-plugin-zip
 ../node_modules/.bin/cordova plugin add cordova-plugin-blob-constructor-polyfill
 ../node_modules/.bin/cordova plugin add cordova-plugin-customevent-polyfill
 ../node_modules/.bin/cordova plugin add cordova-plugin-xhr-blob-polyfill
