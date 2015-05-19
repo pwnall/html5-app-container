@@ -53,14 +53,10 @@ convert app/img/$APP_LOGO -resize 180x180 -gravity center -extent 180x180 \
 # Bundle Cordova's platform files.
 # NOTE: the iOS build clears its www folder, but it copies the contents of
 #       platform_www in it, so we can stash our code there
-cat cordova/platforms/ios/www/cordova.js \
+node_modules/.bin/coffee script/merge-plugins.coffee \
+    cordova/platforms/ios/www/cordova.js \
     cordova/platforms/ios/www/cordova_plugins.js \
-    cordova/platforms/ios/www/plugins/org.chromium.*/*.js \
-    cordova/platforms/ios/www/plugins/org.chromium.*/*/*.js \
-    cordova/platforms/ios/www/plugins/org.chromium.*/*/*/*.js \
-    cordova/platforms/ios/www/plugins/cordova-*/www/*.js \
-    cordova/platforms/ios/www/plugins/cordova-*/www/ios/*.js \
-    > cordova/platforms/ios/platform_www/cordova_all.xl.js
+    cordova/platforms/ios/platform_www/cordova_all.xl.js
 node_modules/.bin/uglifyjs --screw-ie8 -c -m \
     -o cordova/platforms/ios/platform_www/cordova_all.min.js \
     cordova/platforms/ios/platform_www/cordova_all.xl.js
