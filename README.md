@@ -47,11 +47,10 @@ The following commands may reveal new useful plugins.
 
 ## Setup
 
-Run the commands below to create application containers for Android and iOS.
+Run the commands below to create the application container.
 
 ```bash
-./script/setup-android.sh
-./script/setup-ios.sh
+./script/setup.sh
 ```
 
 This will create keys for releasing the container application in `keys`. Back

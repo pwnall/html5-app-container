@@ -35,11 +35,13 @@ cd cordova
 ../node_modules/.bin/cordova plugin add cordova-plugin-battery-status
 ../node_modules/.bin/cordova plugin add cordova-plugin-camera
 ../node_modules/.bin/cordova plugin add cordova-plugin-console
+../node_modules/.bin/cordova plugin add cordova-plugin-contacts
 ../node_modules/.bin/cordova plugin add cordova-plugin-device
 ../node_modules/.bin/cordova plugin add cordova-plugin-device-motion
 ../node_modules/.bin/cordova plugin add cordova-plugin-device-orientation
 ../node_modules/.bin/cordova plugin add cordova-plugin-dialogs
 ../node_modules/.bin/cordova plugin add cordova-plugin-file
+../node_modules/.bin/cordova plugin add cordova-plugin-file-transfer
 ../node_modules/.bin/cordova plugin add cordova-plugin-geolocation
 ../node_modules/.bin/cordova plugin add cordova-plugin-globalization
 ../node_modules/.bin/cordova plugin add cordova-plugin-media
