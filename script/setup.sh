@@ -7,24 +7,14 @@ set +o histexpand  # No history expansion, because of arcane ! treatment.
 # Import configuration variables.
 . script/vars.sh
 
-# Get Cordova.
-npm install cordova
-
-# Get CoffeeScript for our Cordova plugin munging script.
-npm install coffee-script
-
-# Get minifier for Cordova's platform JavaScript.
-npm install uglify-js
-
-
-# Get deploy tools.
-npm install ios-deploy
-npm install ios-sim
+# Install build dependencies.
+npm install
 
 # Create generic Cordova application.
 rm -rf cordova/
 mkdir -p cordova/
-node_modules/.bin/cordova create ./cordova "$APP_PACKAGE" "$APP_NAME"
+node_modules/.bin/cordova create ./cordova "$APP_PACKAGE" "$APP_NAME" \
+    --copy-from=./app
 cd cordova
 
 # TODO(pwnall): consider adding Firefox OS / Windows / etc.
@@ -79,4 +69,4 @@ cd cordova
 ../node_modules/.bin/cordova plugin add cordova-plugin-crosswalk-webview
 
 # NFC plugin.
-../node_modules/.bin/cordova plugin add com.chariotsolutions.nfc.plugin
+../node_modules/.bin/cordova plugin add phonegap-nfc

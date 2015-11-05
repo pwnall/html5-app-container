@@ -1,0 +1,22 @@
+{
+  "name": "html5-app-container",
+  "version": "1.0.0",
+  "description": "Dummy package with npm dependencies for the build process",
+  "author": "Victor Costan <victor@costan.us> (http://www.costan.us)",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pwnall/html5-app-container.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pwnall/html5-app-container/issues"
+  },
+  "devDependencies": {
+    "cordova": ">= 5.3.3",
+    "coffee-script": ">= 1.10.0",
+    "uglify-js": ">= 2.5.0",
+    "ios-deploy": ">= 1.8.2",
+    "ios-sim": ">= 5.0.3"
+  }
+}
